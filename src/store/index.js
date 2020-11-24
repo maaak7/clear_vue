@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import plugins from '@/plugins/vuex'
 
-Vue.use(Vuex)
+// import myStore from '@/store/modules/my-store'
+
+Vue.use(Vuex);
 
 export default new Vuex.Store({
+  plugins: [plugins],
   state: {
   },
   mutations: {
@@ -11,5 +15,6 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    // myStore
   }
 })

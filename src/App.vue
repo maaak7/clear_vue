@@ -8,6 +8,16 @@
   </div>
 </template>
 
+<script>
+import ApiService from "@/services/api.service";
+
+export default {
+  created() {
+    ApiService.init();
+  }
+}
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
