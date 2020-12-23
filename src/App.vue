@@ -1,6 +1,6 @@
 <template>
   <div class="app-root">
-<!--    <AppLoader v-if="isLoading" />-->
+    <AppLoader v-if="isLoading" />
     <AppNotify />
     <router-view></router-view>
   </div>
@@ -8,12 +8,12 @@
 
 <script>
 import ApiService from "@/core/services/api.service";
-// import AppLoader from "@/components/elements/loaders/AppLoader";
+import AppLoader from "@/components/elements/loaders/AppLoader";
 import AppNotify from "@/components/elements/notifications/AppNotify";
 
 export default {
   components: {
-    // AppLoader,
+    AppLoader,
     AppNotify
   },
   created() {
