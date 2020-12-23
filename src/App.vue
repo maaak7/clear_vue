@@ -1,42 +1,61 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div class="app-root">
+<!--    <AppLoader v-if="isLoading" />-->
+    <AppNotify />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import ApiService from "@/services/api.service";
+import ApiService from "@/core/services/api.service";
+// import AppLoader from "@/components/elements/loaders/AppLoader";
+import AppNotify from "@/components/elements/notifications/AppNotify";
 
 export default {
+  components: {
+    // AppLoader,
+    AppNotify
+  },
   created() {
     ApiService.init();
+  },
+  computed: {
+    isLoading() {
+      return this.$store.getters["loaderStore/IS_LOADING"];
+    }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+// Main demo style scss
+@import "assets/sass/style.vue";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+</style>
+
+<style lang="scss">
+* {
+  outline: none;
 }
 
-#nav {
-  padding: 30px;
+.app-root {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  height: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.card .card-header {
+  padding: 25px 20px;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.card .card-body,
+.card .card-footer {
+  padding: 20px;
+}
+
+.modal-backdrop {
+  opacity: 0.5;
 }
 </style>

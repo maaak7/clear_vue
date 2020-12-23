@@ -1,0 +1,29 @@
+.b-table {
+  margin-bottom: 0;
+}
+
+.b-table thead tr,
+.b-table tbody tr {
+  cursor: pointer;
+}
+
+.b-table tr,
+.b-table tr th {
+  outline: none;
+}
+
+.table-responsive {
+  white-space: nowrap;
+}
+
+.b-table__filter-input {
+  width: 100%;
+  max-width: 180px;
+  min-width: 40px;
+  padding: 5px;
+  background-color: white;
+  border-radius: 4px;
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
