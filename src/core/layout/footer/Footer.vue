@@ -8,9 +8,9 @@
       <div class="text-dark"></div>
       <div>
         <span class="text-muted font-weight-bold">
-          2020 &nbsp;&copy;&nbsp;
+          2021 &nbsp;&copy;&nbsp;
         </span>
-        <span>Artelogic</span>
+        <span>maaak7</span>
       </div>
     </div>
   </div>
